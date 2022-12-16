@@ -1,1 +1,1 @@
-e.insert(0, "ENTER YOUR NAME: ")
+e.pack()
