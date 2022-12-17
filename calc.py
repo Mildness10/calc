@@ -14,6 +14,9 @@ def click(val):
     curr = e.get()
     e.delete(0, END)
     e.insert(0, str(curr) + str(val))
+    
+def clear():
+    e.delete(0, END)
 
 #row_one
 no_1 = Button(root, text="1", padx=40, pady=20, command=lambda: click(1)).grid(row=3,column=0)
@@ -29,8 +32,8 @@ no_8 = Button(root, text="8", padx=40, pady=20, command=lambda: click(8)).grid(r
 no_9 = Button(root, text="9", padx=40, pady=20, command=lambda: click(9)).grid(row=1,column=2)
 #row_four
 no_0 = Button(root, text="0", padx=40, pady=20, command=lambda: click(0)).grid(row=4,column=0)
-clear = Button(root, text='C', padx=39, pady=20, command=lambda: click()).grid(row=4, column=1)
-equal = Button(root, text="=", padx=39, pady=20, command=lambda: click()).grid(row=4,column=2)
+clear_button = Button(root, text='C', padx=39, pady=20, command=clear).grid(row=4, column=1)
+equal_button = Button(root, text="=", padx=39, pady=20, command=lambda: click()).grid(row=4,column=2)
 
 
 
