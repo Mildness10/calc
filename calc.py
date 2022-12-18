@@ -19,8 +19,16 @@ def clear():
     e.delete(0, END)
     
 def add():
-    
+    first_no = e.get()
+    global num1
+    num1 = int(first_no)
+    e.delete(0, END)
     return
+
+def equal():
+    second_no = e.get()
+    e.delete(0, END)
+    e.insert(0, num1 + int(second_no))
 
 #row_one
 no_1 = Button(root, text="1", padx=40, pady=20, command=lambda: click(1)).grid(row=3,column=0)
@@ -40,7 +48,7 @@ mul_but = Button(root, text="*", padx=40, pady=20).grid(row=1,column=3)
 #row_four
 no_0 = Button(root, text="0", padx=40, pady=20, command=lambda: click(0)).grid(row=4,column=0)
 clear_but = Button(root, text='C', padx=39, pady=20, command=clear).grid(row=4, column=1)
-equal_but = Button(root, text="=", padx=39, pady=20, command=lambda: click()).grid(row=4,column=2)
+equal_but = Button(root, text="=", padx=39, pady=20, command=equal).grid(row=4,column=2)
 div_but = Button(root, text="/", padx=40, pady=20).grid(row=4,column=3)
 
 
