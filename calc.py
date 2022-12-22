@@ -75,6 +75,38 @@ def tan():
     val = sign
     e.delete(0, END)
 
+def log():
+    sign = e.get()
+    global val
+    global operator
+    operator = 'log'
+    val = sign
+    e.delete(0, END)
+
+def square():
+    first_no = e.get()
+    global num1
+    global operator
+    operator = 'square'
+    num1 = int(first_no)
+    e.delete(0, END)
+
+def square_root():
+    sign = e.get()
+    global val
+    global operator
+    operator = 'square_root'
+    val = sign
+    e.delete(0, END)
+
+def factorial():
+    first_no = e.get()
+    global num1
+    global operator
+    operator = 'factorial'
+    num1 = int(first_no)
+    e.delete(0, END)
+
 def equal():
     second_no = e.get()
     e.delete(0, END)
@@ -93,18 +125,25 @@ def equal():
         e.insert(0, math.cos(math.radians(int(second_no))))
     if operator == 'tan':
         e.insert(0, math.tan(math.radians(int(second_no)))) 
-        
+    if operator == 'log':
+        e.insert(0, math.log10(int(second_no)))
+    if operator == 'square':
+        e.insert(0, num1**2)
+    if operator == 'square_root':
+        e.insert(0, math.sqrt(int(second_no)))
+    if operator == 'factorial':
+        e.insert(0, math.factorial(num1))
     
 
 #row_one
-sin = Button(root, text="sin", padx=30, pady=15, command=sin).grid(row=1,column=0)
-cos = Button(root, text="cos", padx=30, pady=15, command=cos).grid(row=1,column=1)
-tan = Button(root, text="tan", padx=30, pady=15, command=tan).grid(row=1,column=2)
-log = Button(root, text="log", padx=30, pady=15, command=divide).grid(row=1,column=3)
+sin_but = Button(root, text="sin", padx=30, pady=15, command=sin).grid(row=1,column=0)
+cos_but = Button(root, text="cos", padx=29, pady=15, command=cos).grid(row=1,column=1)
+tan_but = Button(root, text="tan", padx=29, pady=15, command=tan).grid(row=1,column=2)
+log = Button(root, text="log", padx=30, pady=15, command=log).grid(row=1,column=3)
 #row_two
-xy = Button(root, text="x^2", padx=28, pady=15, command=lambda: click(7)).grid(row=2,column=0)
-xx = Button(root, text="x^y", padx=28, pady=15, command=lambda: click(8)).grid(row=2,column=1)
-x_fac = Button(root, text="x!", padx=33, pady=15, command=lambda: click(9)).grid(row=2,column=2)
+xy = Button(root, text="√", padx=33.5, pady=15, command=square_root).grid(row=2,column=0)
+xx_but = Button(root, text="x^2", padx=28, pady=15, command=square).grid(row=2,column=1)
+x_fac = Button(root, text="x!", padx=33, pady=15, command=factorial).grid(row=2,column=2)
 div_but = Button(root, text="/", padx=36, pady=15, command=divide).grid(row=2,column=3)
 #row_three
 no_7 = Button(root, text="7", padx=35, pady=15, command=lambda: click(7)).grid(row=3,column=0)

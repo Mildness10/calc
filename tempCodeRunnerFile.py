@@ -1,4 +1,11 @@
-no_7 = Button(root, text="7", padx=35, pady=15, command=lambda: click(7)).grid(row=1,column=0)
-# no_8 = Button(root, text="8", padx=35, pady=15, command=lambda: click(8)).grid(row=1,column=1)
-# no_9 = Button(root, text="9", padx=35, pady=15, command=lambda: click(9)).grid(row=1,column=2)
-# mul_but = Button(root, text="*", padx=35, pady=15, command=multiply).grid(row=1,column=3)
+uare':
+        e.insert(0, num1**2)
+    if operator == 'square_root':
+        e.insert(0, math.sqrt(int(second_no)))
+    if operator == 'factorial':
+        e.insert(0, math.factorial(num1))
+    
+
+#row_one
+sin_but = Button(root, text="sin", padx=30, pady=15, command=sin).grid(row=1,column=0)
+cos_but = Button(root, text=
