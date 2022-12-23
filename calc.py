@@ -1,19 +1,21 @@
 from tkinter import *
 import math
 
+#BASE PROGRAM
+
 root = Tk()
 root.title("Calculator")
 root.configure(bg='#856ff8')
 root.geometry('343x380')
 
-
+#INPUT FIELD
 
 e = Entry(root, width=50, borderwidth=5, bg='#bccd96')
 e.grid(row=0, column=0, columnspan=4, padx=15, pady=15)
-# e.pack()
 
 e.get()
 
+#TAKING INPUT AND CLEARING INPUT
 
 def click(val):
     curr = e.get()
@@ -22,7 +24,9 @@ def click(val):
     
 def clear():
     e.delete(0, END)
-    
+
+#ALL OPERATORS 
+
 def add():
     first_no = e.get()
     global num1
@@ -111,6 +115,8 @@ def factorial():
     num1 = int(first_no)
     e.delete(0, END)
 
+#OPERATOR FUNCTIONS
+
 def equal():
     second_no = e.get()
     e.delete(0, END)
@@ -168,12 +174,5 @@ add_but = Button(root, text="+", padx=36, pady=15, bg='#bebebe', command=add).gr
 no_0 = Button(root, text="0", padx=35, pady=15, bg='#ffffff', command=lambda: click(0)).grid(row=6,column=0)
 clear_but = Button(root, text='C', padx=34, pady=15, bg='#bebebe', command=clear).grid(row=6, column=1)
 equal_but = Button(root, text="=", padx=80, pady=15, bg='#1260cc', command=equal).grid(row=6,column=2, columnspan=2)
-# div_but = Button(root, text="/", padx=35, pady=15, command=divide).grid(row=6,column=3)
-
-
-
-
-
-# no_1.pack()
 
 root.mainloop()
