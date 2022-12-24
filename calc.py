@@ -25,7 +25,7 @@ def click(val):
 def clear():
     e.delete(0, END)
 
-#ALL OPERATORS 
+#ALL MATHEMATICAL OPERATORS 
 
 def add():
     first_no = e.get()
